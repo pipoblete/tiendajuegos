@@ -13,3 +13,10 @@ def registro(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def juegos(request):
+    juegos = Juego.objects.all()
+    context = {
+        'juegos': juegos,
+    }
+    return render(request, 'juegos.html', context)

@@ -73,52 +73,22 @@
     
 
     <main class="container py-4">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Bienvenido a Tiendita</h1>
-            </div>
-        </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Encontrarás los mejores juegos a los mejores precios</p>
+        {% for juego in juegos %}
+        <div class="card text-bg-dark">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col-md-4 mb-3">
+                <img src="{{juego.imagen.url}}" class="img-fluid rounded-start" alt="...">
+              </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text">{{juego.descripcion}}</p>
+                    <p class="card-text"><small class="text-muted">{{juego.precio}}</small></p>
+                    <button class="btn-ver" type="button"> Agregar al carrito </button>
+                </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-center">Categorías</h2>
-                </div>
-            </div>
+        {% endfor %}
 
-            {% for categoria in categorias %}
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card text-bg-dark">
-                        <div id="carousel_{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                {% for juego in categoria.juego_set.all %}
-                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                    <img src="{{ juego.imagen.url }}" class="card-img-top d-block w-100" alt="{{ juego.nombre }}">
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ forloop.counter }}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ forloop.counter }}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ categoria.nombre }}</h5>
-                            <p class="card-text">{{ categoria.descripcion }}</p>
-                            <button class="btn-ver">Ver juegos</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
 
     </main>
 

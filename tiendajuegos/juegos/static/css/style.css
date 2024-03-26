@@ -103,3 +103,33 @@ p{
   font-family: 'Coolvetica';
   color: white;
 }
+
+.a-redireccion{
+  font-family: "Coolvetica";
+  color: red;
+}
+
+.card-header{
+  font-family: '04b_03b';
+  color: white;
+  background-color: rgb(204, 58, 58);
+}
+
+.form-label{
+  font-family: 'Coolvetica';
+  color: white;
+}
+
+.form-control{
+  font-family: 'Coolvetica';
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.card-text{
+  font-family: 'Coolvetica';
+  color: white;
+  text-align: left;
+}
+
