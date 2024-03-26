@@ -10,7 +10,11 @@ main {
     flex: 1;
 }
 
-h2{
+p {
+    color: white;
+}
+
+a {
     color: red;
-    text-align: center;
+    text-decoration: none;
 }
