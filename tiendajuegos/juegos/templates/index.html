@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de videojuegos</title>
     <link rel="stylesheet"  href="{% static 'css/style.css' %}?v=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -19,6 +20,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Juegos</a>
               </li>
               
               <li class="nav-item dropdown">
@@ -53,203 +58,67 @@
                 <input class="search-input" type="search" placeholder="Buscar" aria-label="Buscar">
                 <button class="search-button" type="submit">Buscar</button>
             </form>            
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-cart"></i>
+                    </a>
+                </li>
+            </ul>
+            
           </div>
         </div>
       </nav>
     
 
-      <main class="container py-4">
+    <main class="container py-4">
         <div class="row">
-            <div id="categoria-accion" class="col-md-4 mb-3">
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Acción</h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="categoria-aventura" class="col-md-4 mb-3">
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Aventura </h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="categoria-deportes" class="col-md-4 mb-3">   
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Deportes</h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="categoria-estrategia" class="col-md-4 mb-3">
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Estrategia</h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
-            </div>
-      
-
-            <div id="categoria-simulacion" class="col-md-4 mb-3">
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Simulación</h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
-            </div>
-       
-
-            <div id="categoria-rpg" class="col-md-4 mb-3">
-                <div class="card text-bg-dark">
-                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">RPG</h5>
-                        <p class="card-text"></p>
-                        <button class="btn-ver">Ver juegos</button>
-                    </div>
-                </div>
+            <div class="col-md-12">
+                <h1 class="text-center">Bienvenido a Tiendita</h1>
             </div>
         </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Encontrarás los mejores juegos a los mejores precios</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center">Categorías</h2>
+                </div>
+            </div>
 
-        
+            {% for categoria in categorias %}
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card text-bg-dark">
+                        <div id="carousel_{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for juego in categoria.juego_set.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <img src="{{ juego.imagen.url }}" class="card-img-top d-block w-100" alt="{{ juego.nombre }}">
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel_{{ forloop.counter }}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel_{{ forloop.counter }}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ categoria.nombre }}</h5>
+                            <p class="card-text">{{ categoria.descripcion }}</p>
+                            <button class="btn-ver">Ver juegos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
 
     </main>
 

@@ -14,8 +14,8 @@ p {
     color: white;
 }
 
-a {
-  color: red;
+.list-unstyled {
+  color: rgb(207, 51, 51);
 }
 
 @font-face {
@@ -80,4 +80,26 @@ li{
   border: none;
   border-radius: 5px;
   padding: 5px;
+}
+
+.img-juego{
+  border-radius: 5px;
+  width: 200px;
+}
+
+.text-center{
+  font-family: '04b_03b';
+  color: rgb(218, 46, 46);
+
+}
+
+p{
+  font-family: 'VCR_OSD_MONO_1.001';
+  color: white;
+  text-align: center;
+}
+
+.card-text{
+  font-family: 'Coolvetica';
+  color: white;
 }

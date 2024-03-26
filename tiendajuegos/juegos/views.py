@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from .models import Juego, Categoria
 
 def index(request):
-    return render(request, 'index.html')
+    categorias = Categoria.objects.all()
+    context = {
+        'categorias': categorias,
+    }
+    return render(request, 'index.html', context)
 
 def registro(request):
     return render(request, 'registro.html')
