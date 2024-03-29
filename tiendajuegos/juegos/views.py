@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
+
+from tiendajuegos.juegos.Carrito import Carrito
 from .models import Juego, Categoria
 
 from django.contrib.sessions.models import Session
 from django.contrib.sessions.backends.db import SessionStore
-from tiendajuegos.juegos.Carrito import Carrito
+
 
 
 def index(request):
