@@ -13,6 +13,7 @@ class Juego(models.Model):
     imagen = models.ImageField(upload_to='juegos/', null=True, blank=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.IntegerField()
+    juego_id = models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.nombre

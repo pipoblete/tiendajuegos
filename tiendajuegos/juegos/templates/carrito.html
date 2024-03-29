@@ -1,1 +1,17 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+</head>
+<body>
+    <h1>Carrito de compras</h1>
+    <ul>
+        {% for item_id, item in carrito.items %}
+            <li>{{ item.juego.nombre }} - Cantidad: {{ item.cantidad }} - Subtotal: {{ item.subtotal }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total: {{ total }}</p>
+</body>
+</html>

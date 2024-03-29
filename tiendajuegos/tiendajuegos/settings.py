@@ -124,3 +124,11 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'juegos/static'), )
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#sesion
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_AGE = 3600  # Duración de la cookie de sesión en segundos (1 hora)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
