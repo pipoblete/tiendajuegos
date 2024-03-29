@@ -3,6 +3,7 @@ from .models import Juego, Categoria
 
 from django.contrib.sessions.models import Session
 from django.contrib.sessions.backends.db import SessionStore
+from tiendajuegos.juegos.Carrito import Carrito
 
 
 def index(request):
@@ -25,19 +26,25 @@ def juegos(request):
     }
     return render(request, 'juegos.html', context)
 
-def agregar_al_carrito(request, juego_id):
-    juego = Juego.objects.get(pk=juego_id)
-    if 'carrito' not in request.session:
-        request.session['carrito'] = {}
-    carrito = request.session['carrito']
-    if juego_id in carrito:
-        carrito[juego_id]['cantidad'] += 1
-    else:
-        carrito[juego_id] = {'juego': juego, 'cantidad': 1}
-    request.session.modified = True
-    return redirect('mostrar_carrito')
+def agregar_juego(request, juego_id):
+    carrito = Carrito(request)
+    juego = Juego.objects.get(id=juego_id)
+    carrito.agregar(juego)
+    return redirect("juegos")
 
-def mostrar_carrito(request):
-    carrito = request.session.get('carrito', {})
-    total = sum(item['juego'].precio * item['cantidad'] for item in carrito.values())
-    return render(request, 'carrito.html', {'carrito': carrito, 'total': total})
+def eliminar_juego(request, juego_id):
+    carrito = Carrito(request)
+    juego = Juego.objects.get(id=juego_id)
+    carrito.eliminar(juego)
+    return redirect("Tienda")
+
+def restar_juego(request, juego_id):
+    carrito = Carrito(request)
+    juego = Juego.objects.get(id=juego_id)
+    carrito.restar(juego)
+    return redirect("Tienda")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("Tienda")
