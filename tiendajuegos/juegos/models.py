@@ -11,7 +11,7 @@ class Juego(models.Model):
     descripcion = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to='juegos/', null=True, blank=True)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    precio = models.IntegerField()
     stock = models.IntegerField()
     juego_id = models.AutoField(primary_key=True)
 

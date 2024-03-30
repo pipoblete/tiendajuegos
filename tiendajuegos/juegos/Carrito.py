@@ -1,3 +1,6 @@
+
+
+
 class Carrito:
     def __init__(self, request):
         self.request = request
@@ -10,17 +13,18 @@ class Carrito:
             self.carrito = carrito
 
     def agregar(self, juego):
-        id = str(juego.id)
-        if id not in self.carrito.keys():
-            self.carrito[id]={
-                "producto_id": juego.id,
+        if juego.juego_id not in self.carrito.keys():
+            self.carrito[juego.juego_id]={
+                "producto_id": juego.juego_id,
                 "nombre": juego.nombre,
                 "acumulado": juego.precio,
                 "cantidad": 1,
+                
+
             }
         else:
-            self.carrito[id]["cantidad"] += 1
-            self.carrito[id]["acumulado"] += juego.precio
+            self.carrito[juego.juego_id]["cantidad"] += 1
+            self.carrito[juego.juego_id]["acumulado"] += juego.precio
         self.guardar_carrito()
 
     def guardar_carrito(self):
@@ -28,19 +32,26 @@ class Carrito:
         self.session.modified = True
 
     def eliminar(self, juego):
-        id = str(juego.id)
-        if id in self.carrito:
-            del self.carrito[id]
+        
+        if juego.juego_id in self.carrito:
+            del self.carrito[juego.juego_id]
             self.guardar_carrito()
 
     def restar(self, juego):
-        id = str(juego.id)
-        if id in self.carrito.keys():
-            self.carrito[id]["cantidad"] -= 1
-            self.carrito[id]["acumulado"] -= juego.precio
-            if self.carrito[id]["cantidad"] <= 0: self.eliminar(juego)
+        
+        if juego.juego_id in self.carrito.keys():
+            self.carrito[juego.juego_id]["cantidad"] -= 1
+            self.carrito[juego.juego_id]["acumulado"] -= juego.precio
+            if self.carrito[juego.juego_id]["cantidad"] <= 0: self.eliminar(juego)
             self.guardar_carrito()
 
     def limpiar(self):
         self.session["carrito"] = {}
         self.session.modified = True
+
+    def calcular_total(self):
+        total = 0
+        for juego_id in self.carrito.values():
+            total += juego_id['acumulado']
+        return total
+    
