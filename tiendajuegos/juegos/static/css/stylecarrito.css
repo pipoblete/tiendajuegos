@@ -53,3 +53,35 @@ th{
     margin-top: 50px;
 
 }
+
+.navbar-brand{
+    font-family: '04b_03b';
+  }
+  
+  h5 {
+    font-family: 'VCR_OSD_MONO_1.001';
+  }
+  
+  li{
+    font-family: 'Coolvetica';
+  }
+  
+  .search-button{
+    font-family: 'Coolvetica';
+    color: white;
+    background-color: rgb(204, 58, 58);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .search-input {
+    font-family: 'Coolvetica';
+    color: rgb(77, 77, 77);
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+  
+  
+  }

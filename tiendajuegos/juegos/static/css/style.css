@@ -133,3 +133,23 @@ p{
   text-align: left;
 }
 
+th{
+  font-family: 'Coolvetica';
+}
+
+.table-container{
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.alert{
+  margin-left: 150px ;
+  margin-right: 150px;
+  margin-top: 50px;
+
+}
