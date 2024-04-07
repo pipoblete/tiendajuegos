@@ -1,0 +1,55 @@
+body{
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: '04b_03b';
+    src: url('../fonts/04B_30__.TTF') format('truetype');
+    font-size: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'VCR_OSD_MONO_1.001';
+    src: url(../fonts/VCR_OSD_MONO_1.001.ttf) format('truetype');
+    font-size: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Coolvetica';
+    src: 
+         url(../fonts/coolveticarg.otf) format('truetype');
+    font-size: normal;
+    font-weight: normal;
+  }
+
+.text-center{
+    font-family: '04b_03b';
+}
+
+th{
+    font-family: 'Coolvetica';
+}
+
+.table-container{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.alert{
+    margin-left: 150px ;
+    margin-right: 150px;
+    margin-top: 50px;
+
+}
